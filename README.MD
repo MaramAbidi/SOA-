@@ -170,9 +170,7 @@ L'API REST est accessible à l'URL de base : `http://localhost:8080/ProjetREST/a
 
 ## 🎥 Vidéo de Démonstration
 
-📹 **Lien vers la démonstration vidéo** : [Voir la démonstration sur Google Drive](#)
-
-> *Remplacez ce lien par votre lien Google Drive réel*
+📹 **Lien vers la démonstration vidéo** : [Voir la démonstration sur Google Drive]((https://drive.google.com/drive/folders/1Tm9fmZIaJNQbiuIJcWQyivgKwgCTSUkz?usp=sharing))
 
 La vidéo présente :
 - Installation et configuration du projet
