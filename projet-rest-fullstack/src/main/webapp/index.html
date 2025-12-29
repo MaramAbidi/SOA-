@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Personnes - REST App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Gestion des Personnes</h1>
+            <p class="subtitle">Application REST avec JAX-RS et JPA</p>
+        </header>
+
+        <!-- Section Recherche -->
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Rechercher par nom...">
+                <button onclick="searchPerson()">🔍 Rechercher</button>
+                <button onclick="loadAllPersons()" class="btn-secondary">📋 Afficher tout</button>
+            </div>
+        </section>
+
+        <!-- Section Formulaire -->
+        <section class="form-section">
+            <h2 id="formTitle">➕ Ajouter une personne</h2>
+            <form id="personForm">
+                <input type="hidden" id="personId">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <textarea id="adresse" rows="2"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">💾 Enregistrer</button>
+                    <button type="button" onclick="resetForm()" class="btn-secondary">🔄 Annuler</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section Liste des personnes -->
+        <section class="list-section">
+            <h2>👥 Liste des personnes</h2>
+            <div id="personsList"></div>
+        </section>
+
+        <!-- Message de notification -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

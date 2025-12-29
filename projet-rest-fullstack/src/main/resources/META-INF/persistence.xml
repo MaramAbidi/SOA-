@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="PersonPU" transaction-type="RESOURCE_LOCAL">
+        <description>Hibernate Entity Manager for Person Management</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+        <!-- Entités à mapper -->
+        <class>com.rest.model.Person</class>
+        
+        <properties>
+            <!-- Configuration de la base de données -->
+            <!-- IMPORTANT: Pas besoin de spécifier la DB, Hibernate la créera -->
+            <property name="javax.persistence.jdbc.driver" 
+                      value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" 
+                      value="jdbc:mysql://localhost:3306/persondb?createDatabaseIfNotExist=true&amp;serverTimezone=UTC&amp;useSSL=false" />
+            <property name="javax.persistence.jdbc.user" 
+                      value="root" />
+            <property name="javax.persistence.jdbc.password" 
+                      value="" />
+            
+            <!-- Configuration Hibernate -->
+            <property name="hibernate.dialect" 
+                      value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            
+            <!-- IMPORTANT: Cette propriété crée automatiquement les tables -->
+            <property name="hibernate.hbm2ddl.auto" 
+                      value="update" />
+            
+            <!-- Afficher les requêtes SQL dans la console -->
+            <property name="hibernate.show_sql" 
+                      value="true" />
+            <property name="hibernate.format_sql" 
+                      value="true" />
+            
+            <!-- Configuration additionnelle -->
+            <property name="hibernate.use_sql_comments" 
+                      value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
